@@ -51,6 +51,10 @@
   .welcome p.sub{color:#C7C2B8;font-size:15px;margin:0 0 26px}
   .welcome .vid{max-width:860px;margin:0 auto;border:1px solid rgba(184,148,90,.45);border-radius:4px;overflow:hidden;box-shadow:0 18px 50px rgba(0,0,0,.5);background:#000}
   .welcome video{display:block;width:100%;height:auto;aspect-ratio:16/9}
+  .welcome .vid-ctas{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:28px}
+  .welcome .vid-note{color:#C7C2B8;font-size:14px;margin:18px 0 0}
+  .welcome .vid-note a{color:var(--gold-l);font-weight:600;text-decoration:none}
+  @media (max-width:640px){.welcome .vid-ctas .btn{width:100%;text-align:center}}
 
   /* hero */
   .hero{background:radial-gradient(ellipse at 70% 0%, #2a2117 0%, var(--black) 60%);color:var(--ivory);padding:88px 0 96px}
@@ -232,6 +236,11 @@
         Your browser can't play this video. You can call or text me at (310) 279-7614.
       </video>
     </div>
+    <div class="vid-ctas">
+      <a class="btn" href="executor-checklist.pdf" target="_blank" rel="noopener">Free executor checklist</a>
+      <a class="btn ghost" href="#value">See what the home might be worth</a>
+    </div>
+    <p class="vid-note">Questions? Call or text <a href="tel:+13102797614">(310) 279-7614</a>.</p>
   </div>
 </section>
 
