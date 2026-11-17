@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Probate Broker Group | Farhad Yasharpour, Keller Williams</title>
+<meta name="description" content="Help for executors and families selling or keeping an inherited home in the San Fernando Valley and Westside of Los Angeles. Farhad Yasharpour, REALTOR®, Keller Williams Realty.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;1,500&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --black:#0F1012; --gold:#B8945A; --gold-l:#C9A96E; --gold-m:#A8875A; --ivory:#F4EFE4;
+    --stone:#ECE9E2; --panel:#F4F1EB; --text:#24252A; --text2:#4A4B50; --muted:#7A7C82; --hair:#E8E3D9;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;font-family:Montserrat,Arial,sans-serif;color:var(--text);background:#fff;line-height:1.65;font-size:16px}
+  h1,h2,h3{font-family:"Playfair Display",Georgia,serif;font-weight:500;line-height:1.2;margin:0}
+  a{color:inherit}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 28px}
+  .eyebrow{font-size:12px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);font-weight:600;margin:0 0 14px}
+
+  /* header */
+  header{background:var(--black);color:var(--ivory);position:sticky;top:0;z-index:10;border-bottom:3px solid var(--gold)}
+  header .wrap{display:flex;align-items:center;justify-content:space-between;height:72px;gap:16px}
+  .brand{display:flex;flex-direction:column;text-decoration:none}
+  .brand b{font-family:"Playfair Display",Georgia,serif;font-weight:500;font-size:22px;letter-spacing:.4px;color:var(--ivory)}
+  .brand span{font-size:11px;letter-spacing:1.6px;text-transform:uppercase;color:var(--gold-l)}
+  nav{display:flex;align-items:center;gap:26px;font-size:13px;letter-spacing:.8px}
+  nav a{text-decoration:none;color:#D9D4C9}
+  nav a:hover{color:var(--gold-l)}
+  .btn{display:inline-block;background:var(--gold);color:var(--black);text-decoration:none;font-weight:600;font-size:13px;letter-spacing:1.4px;text-transform:uppercase;padding:14px 26px;border-radius:2px;border:1px solid var(--gold)}
+  .btn:hover{background:var(--gold-l)}
+  .btn.ghost{background:transparent;color:var(--gold-l)}
+  .btn.ghost:hover{background:rgba(184,148,90,.12)}
+  .btn.dark{background:var(--black);color:var(--ivory);border-color:var(--black)}
+  nav .btn{padding:10px 18px;font-size:12px;white-space:nowrap}
+
+  /* hero */
+  .hero{background:radial-gradient(ellipse at 70% 0%, #2a2117 0%, var(--black) 60%);color:var(--ivory);padding:88px 0 96px}
+  .hero .wrap{display:grid;grid-template-columns:1.35fr .65fr;gap:56px;align-items:center}
+  .hero h1{font-size:50px;color:var(--ivory)}
+  .hero h1 em{color:var(--gold-l);font-style:italic}
+  .hero p.lead{font-size:18px;color:#D9D4C9;max-width:560px;margin:22px 0 32px}
+  .hero .ctas{display:flex;gap:14px;flex-wrap:wrap}
+  .hero .phone{margin-top:22px;font-size:14px;color:#C7C2B8;letter-spacing:.5px}
+  .hero .phone a{color:var(--gold-l);text-decoration:none;font-weight:600}
+  .portrait{text-align:center}
+  .portrait img{width:260px;height:260px;border-radius:50%;border:3px solid var(--gold);object-fit:cover;display:block;margin:0 auto 18px}
+  .portrait .nm{font-family:"Playfair Display",Georgia,serif;font-size:24px;color:var(--ivory)}
+  .portrait .ti{font-style:italic;font-family:"Playfair Display",Georgia,serif;color:var(--gold-l);font-size:15px}
+  .portrait .lic{font-size:11px;letter-spacing:1.4px;color:#C7C2B8;margin-top:6px;text-transform:uppercase}
+
+  section{padding:88px 0}
+  section.alt{background:var(--panel)}
+  .sec-head{max-width:680px;margin-bottom:44px}
+  .sec-head h2{font-size:36px}
+  .sec-head p{color:var(--text2);font-size:17px;margin:16px 0 0}
+
+  /* intro */
+  .intro{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+  .intro h2{font-size:36px}
+  .intro p{font-size:17px;color:var(--text2);margin:0 0 16px}
+  .intro .note{border-left:3px solid var(--gold);padding:6px 0 6px 20px;font-family:"Playfair Display",Georgia,serif;font-size:21px;font-style:italic;color:var(--text);line-height:1.5}
+
+  /* help grid */
+  .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+  .card{background:#fff;border:1px solid var(--hair);padding:26px 22px;border-top:3px solid var(--gold)}
+  .card h3{font-size:19px;margin-bottom:8px}
+  .card p{margin:0;font-size:14.5px;color:var(--text2);line-height:1.6}
+
+  /* steps */
+  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:26px;counter-reset:s}
+  .step{position:relative;padding-top:58px}
+  .step:before{counter-increment:s;content:counter(s);position:absolute;top:0;left:0;width:42px;height:42px;border-radius:50%;border:1px solid var(--gold);color:var(--gold);font-family:"Playfair Display",Georgia,serif;font-size:20px;display:flex;align-items:center;justify-content:center}
+  .step h3{font-size:20px;margin-bottom:8px}
+  .step p{margin:0;color:var(--text2);font-size:15px}
+
+  /* options */
+  .options{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:8px}
+  .opt{background:var(--black);color:var(--ivory);padding:30px 26px}
+  .opt h3{color:var(--gold-l);font-size:21px;margin-bottom:10px}
+  .opt p{margin:0;color:#C7C2B8;font-size:14.5px}
+
+  /* checklist band */
+  .band{background:var(--black);color:var(--ivory);padding:64px 0;border-top:3px solid var(--gold);border-bottom:3px solid var(--gold)}
+  .band .wrap{display:flex;align-items:center;justify-content:space-between;gap:36px;flex-wrap:wrap}
+  .band h2{font-size:32px;color:var(--ivory)}
+  .band p{color:#C7C2B8;margin:10px 0 0;max-width:600px}
+  .band .big{font-size:15px;color:var(--gold-l);margin-top:14px;letter-spacing:.4px}
+
+  /* basics */
+  .basics{display:grid;grid-template-columns:1fr 1fr;gap:20px 48px}
+  .basic h3{font-size:20px;margin-bottom:6px}
+  .basic p{margin:0;color:var(--text2);font-size:15px}
+  .disclaim{margin-top:34px;font-size:13px;color:var(--muted);border-top:1px solid var(--hair);padding-top:16px}
+
+  /* about */
+  .about{display:grid;grid-template-columns:.8fr 1.2fr;gap:56px;align-items:center}
+  .about img.logo{width:100%;max-width:400px;display:block}
+  .about h2{font-size:34px;margin-bottom:16px}
+  .about p{color:var(--text2);font-size:16.5px;margin:0 0 14px}
+  .facts{list-style:none;padding:0;margin:18px 0 0;display:grid;gap:8px}
+  .facts li{padding-left:22px;position:relative;font-size:15px}
+  .facts li:before{content:"";position:absolute;left:0;top:10px;width:8px;height:8px;background:var(--gold);transform:rotate(45deg)}
+
+  /* faq */
+  details{border-bottom:1px solid var(--hair);padding:20px 0}
+  details:first-of-type{border-top:1px solid var(--hair)}
+  summary{cursor:pointer;font-family:"Playfair Display",Georgia,serif;font-size:20px;list-style:none;display:flex;justify-content:space-between;gap:20px}
+  summary::-webkit-details-marker{display:none}
+  summary:after{content:"+";color:var(--gold);font-family:Montserrat,Arial,sans-serif;font-size:24px;line-height:1}
+  details[open] summary:after{content:"–"}
+  details p{color:var(--text2);margin:12px 0 0;max-width:800px}
+
+  /* contact */
+  .contact{background:var(--black);color:var(--ivory);text-align:center;padding:84px 0 60px}
+  .contact img.hs{width:130px;height:130px;border-radius:50%;border:2px solid var(--gold);object-fit:cover}
+  .contact h2{font-size:38px;color:var(--ivory);margin:20px 0 10px}
+  .contact p{color:#C7C2B8;max-width:560px;margin:0 auto 28px}
+  .contact .ctas{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+  .idline{margin-top:34px;font-size:11.5px;letter-spacing:1.5px;color:#C7C2B8;text-transform:uppercase}
+  .idline .d{color:var(--gold);margin:0 8px}
+  .idline a{color:var(--gold-l);text-decoration:none}
+  .idline span{white-space:nowrap}
+  .logos{display:flex;justify-content:center;align-items:center;margin-top:28px}
+  .logos img{width:150px;padding:0 14px}
+  .logos .sep{width:1px;height:46px;background:#3A3529}
+
+  footer{background:var(--panel);color:var(--muted);font-size:12px;line-height:1.7;text-align:center;padding:22px 0 26px}
+  footer p{margin:0 auto;max-width:860px}
+
+  @media (max-width:900px){
+    nav a:not(.btn){display:none}
+    .hero{padding:56px 0 64px}
+    .hero .wrap,.intro,.about{grid-template-columns:1fr;gap:36px}
+    .hero h1{font-size:36px}
+    .portrait{order:-1}
+    .portrait img{width:170px;height:170px}
+    .grid{grid-template-columns:1fr 1fr}
+    .steps{grid-template-columns:1fr 1fr}
+    .options,.basics{grid-template-columns:1fr}
+    section{padding:60px 0}
+    .sec-head h2,.intro h2{font-size:29px}
+  }
+  @media (max-width:560px){
+    .wrap{padding:0 20px}
+    .brand b{font-size:18px}
+    .brand span{font-size:9px;letter-spacing:.8px}
+    nav .btn{padding:9px 12px;font-size:11px;letter-spacing:.6px}
+    .grid,.steps{grid-template-columns:1fr}
+    .hero .ctas .btn,.contact .ctas .btn{width:100%;text-align:center}
+    .idline .d{display:none}
+    .idline span{display:block;margin:4px 0}
+    .logos img{width:118px}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="brand" href="#top">
+      <b>Probate Broker Group</b>
+      <span>with Farhad Yasharpour · Keller Williams</span>
+    </a>
+    <nav>
+      <a href="#help">How I help</a>
+      <a href="#process">The process</a>
+      <a href="#faq">Questions</a>
+      <a class="btn" href="tel:+13102797614">(310) 279-7614</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero" id="top">
+  <div class="wrap">
+    <div>
+      <p class="eyebrow">For executors and families in Los Angeles</p>
+      <h1>Inherited a home? You don't have to <em>figure it out alone.</em></h1>
+      <p class="lead">When a loved one passes, the house is often the hardest part. I help executors and families in the San Fernando Valley and the Westside decide what to do with the home, and take care of the details along the way, whether you keep it, rent it or sell it.</p>
+      <div class="ctas">
+        <a class="btn" href="sms:+13102797614">Text me</a>
+        <a class="btn ghost" href="#checklist">Free executor checklist</a>
+      </div>
+      <p class="phone">Call or text <a href="tel:+13102797614">(310) 279-7614</a>. No pressure, just answers.</p>
+    </div>
+    <div class="portrait">
+      <img src="headshot.jpg" alt="Farhad Yasharpour">
+      <div class="nm">Farhad Yasharpour</div>
+      <div class="ti">REALTOR® · Keller Williams Realty</div>
+      <div class="lic">CA DRE #02173521</div>
+    </div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap intro">
+    <div>
+      <p class="eyebrow">If you've just been named executor</p>
+      <h2>It's a lot to take on, often while you're still grieving.</h2>
+    </div>
+    <div>
+      <p>Suddenly you're responsible for a house full of someone else's life. There are court dates, an attorney to work with, bills that still need paying, a property to keep safe, and family members who may all have opinions.</p>
+      <p>Most executors have never done this before. My job is to make the house part simpler: answer your questions, connect you with trusted people, and help you make a clear decision when you're ready.</p>
+      <p class="note">"What's been the most difficult part so far?" That's usually where our first conversation starts.</p>
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="help">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">How I help</p>
+      <h2>One call for the things a house needs right now</h2>
+      <p>Before anyone talks about selling, the home usually needs attention. I can coordinate these for you, or point you to people I trust.</p>
+    </div>
+    <div class="grid">
+      <div class="card"><h3>Clean-out &amp; estate sales</h3><p>Estate sale companies, clean-out crews, junk removal and donation pickups, so belongings are handled with care.</p></div>
+      <div class="card"><h3>Security &amp; upkeep</h3><p>Locksmiths, lockboxes, lawn and pool care, and regular check-ins so a vacant home stays safe and looks lived-in.</p></div>
+      <div class="card"><h3>Utilities &amp; insurance</h3><p>Reminders on keeping utilities on and checking that the home stays properly insured while it sits empty.</p></div>
+      <div class="card"><h3>Repairs &amp; inspections</h3><p>Handymen, contractors and inspectors, only where a repair actually makes sense for your goals.</p></div>
+      <div class="card"><h3>Your professional team</h3><p>I work alongside your probate attorney, and can introduce title, escrow and tax professionals when you need them.</p></div>
+      <div class="card"><h3>Out-of-state family</h3><p>Live far away? I can meet vendors at the house, send video walkthroughs and keep you updated, so you don't have to fly in for every step.</p></div>
+      <div class="card"><h3>Value &amp; options</h3><p>A free walkthrough and an honest opinion of what the home is worth, as it is today and if it were prepared for market.</p></div>
+      <div class="card"><h3>Selling, if you choose to</h3><p>A sale that fits the probate process, coordinated with your attorney from listing to closing.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="process">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">The process</p>
+      <h2>Simple steps, at your pace</h2>
+    </div>
+    <div class="steps">
+      <div class="step"><h3>A conversation</h3><p>Call or text. Tell me where things stand and what's weighing on you. There's no obligation, and no rush.</p></div>
+      <div class="step"><h3>A walkthrough</h3><p>I'll visit the home, in person or by video with you, and give you an honest picture of its condition and value.</p></div>
+      <div class="step"><h3>A clear plan</h3><p>Keep it, rent it, or sell it, as-is or prepared. We'll look at the numbers and what fits your family.</p></div>
+      <div class="step"><h3>Follow-through</h3><p>If you decide to sell, I handle the details and coordinate with your attorney so the sale fits the court's requirements.</p></div>
+    </div>
+
+    <div style="margin-top:56px" class="sec-head">
+      <h2 style="font-size:28px">Three common paths for an inherited home</h2>
+    </div>
+    <div class="options">
+      <div class="opt"><h3>Sell as-is</h3><p>No repairs, no clean-out stress. I can bring offers from local cash buyers and compare them to what the open market might bring, so you can choose with real numbers.</p></div>
+      <div class="opt"><h3>Prepare &amp; list</h3><p>A light clean-out and a few smart touches can make a real difference in price. I'll help you decide what's worth doing, and what isn't.</p></div>
+      <div class="opt"><h3>Keep or rent</h3><p>Sometimes the right answer is to hold the home. I can help you understand rental value and what keeping it involves.</p></div>
+    </div>
+  </div>
+</section>
+
+<div class="band" id="checklist">
+  <div class="wrap">
+    <div>
+      <h2>Free: the executor's checklist</h2>
+      <p>A one-page checklist of what to do with the house in the first weeks, plus my list of trusted estate sale and clean-out companies.</p>
+      <p class="big">Text <b>CHECKLIST</b> to (310) 279-7614 and I'll send it right over.</p>
+    </div>
+    <a class="btn" href="sms:+13102797614?body=CHECKLIST">Text CHECKLIST</a>
+  </div>
+</div>
+
+<section class="alt">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Probate basics</p>
+      <h2>A few things worth knowing about probate in California</h2>
+      <p>Every estate is different, and your attorney will guide the legal side. These are the questions executors ask me most about the house.</p>
+    </div>
+    <div class="basics">
+      <div class="basic"><h3>Probate takes time</h3><p>Probate runs through the court, and in Los Angeles it often takes many months. Knowing the timeline early helps you plan for the house and its costs.</p></div>
+      <div class="basic"><h3>Bills keep coming</h3><p>Mortgage payments, property taxes, insurance and utilities usually still need to be paid while the estate is open. Ask your attorney how the estate should handle them.</p></div>
+      <div class="basic"><h3>Selling can happen during probate</h3><p>Once the court appoints a personal representative, the home can often be sold before probate is finished. How it's done depends on the authority the court grants.</p></div>
+      <div class="basic"><h3>Some sales need court approval</h3><p>Depending on that authority, a sale may need a court hearing, where other buyers can sometimes make higher offers. I'll plan the listing around what your case requires.</p></div>
+      <div class="basic"><h3>Vacant homes need attention</h3><p>An empty house can attract break-ins and may affect insurance coverage. Securing it early protects the estate's biggest asset.</p></div>
+      <div class="basic"><h3>Family decisions come first</h3><p>When several heirs are involved, the best outcome is one everyone understands. Clear numbers make those conversations easier.</p></div>
+    </div>
+    <p class="disclaim">I'm a real estate agent, not an attorney or accountant. This page is general information, not legal or tax advice. Please talk with your probate attorney about your specific situation.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap about">
+    <div><img class="logo" src="fy-logo.jpg" alt="Farhad Yasharpour, Your Trusted REALTOR®"></div>
+    <div>
+      <p class="eyebrow">About Farhad</p>
+      <h2>A local agent who treats your family's home with respect</h2>
+      <p>I'm Farhad Yasharpour, a REALTOR® with Keller Williams in Encino. I work with families across the San Fernando Valley and the Westside, from Tarzana and Sherman Oaks to Beverly Hills and Santa Monica.</p>
+      <p>I believe the house should never add to a family's stress. I'll tell you honestly what I think, help you weigh your options, and never push you to sell before you're ready.</p>
+      <ul class="facts">
+        <li>Keller Williams Realty, Encino-Sherman Oaks office</li>
+        <li>Fluent in English and Farsi</li>
+        <li>Connected with local buyers who purchase homes as-is</li>
+        <li>Licensed in California since 2022, CA DRE #02173521</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="faq">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Questions</p>
+      <h2>What executors ask me</h2>
+    </div>
+    <details><summary>Do I have to wait until probate is finished to sell the house?</summary><p>Usually not. Once the court has appointed you and issued your Letters, the home can often be sold during probate. Your attorney will confirm what your authority allows, and I'll plan around it.</p></details>
+    <details><summary>Do I need to clean out the house or make repairs first?</summary><p>No. Many inherited homes sell as-is. Sometimes a light clean-out or a few small fixes are worth it, and sometimes they aren't. I'll give you honest numbers both ways so you can decide.</p></details>
+    <details><summary>I live out of state. Can you help?</summary><p>Yes. I can meet vendors at the property, send video walkthroughs, collect anything important you need, and keep you updated by phone, text or email.</p></details>
+    <details><summary>Does the walkthrough cost anything?</summary><p>No. The walkthrough and my opinion of value are free, with no obligation to list with me.</p></details>
+    <details><summary>Do you work with my attorney?</summary><p>Yes. Your attorney handles the legal process; I handle the house. I'll keep them informed and make sure the sale follows what the court requires.</p></details>
+    <details><summary>What if the family disagrees about selling?</summary><p>It's common. I can walk everyone through the home's value and the options side by side, so the decision is based on the same clear information.</p></details>
+  </div>
+</section>
+
+<div class="contact" id="contact">
+  <div class="wrap">
+    <img class="hs" src="headshot.jpg" alt="Farhad Yasharpour">
+    <h2>Let's talk about the house</h2>
+    <p>Whether you're ready to decide or just need someone to answer a few questions, I'm happy to help.</p>
+    <div class="ctas">
+      <a class="btn" href="tel:+13102797614">Call (310) 279-7614</a>
+      <a class="btn ghost" href="sms:+13102797614">Text me</a>
+    </div>
+    <div class="idline">
+      <span>Farhad Yasharpour, REALTOR®</span><span class="d">·</span><span>Keller Williams Realty</span><span class="d">·</span><span>CA DRE #02173521</span><span class="d">·</span><span><a href="mailto:yasharpourf@gmail.com">yasharpourf@gmail.com</a></span><span class="d">·</span><span><a href="https://beverlyluxuryestates.com">BeverlyLuxuryEstates.com</a></span>
+    </div>
+    <div class="logos">
+      <img src="kw-luxury.png" alt="Keller Williams Luxury"><div class="sep"></div><img src="fy-logo.jpg" alt="Farhad Yasharpour logo">
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <p>Farhad Yasharpour (CA DRE #02173521) is a real estate salesperson with Keller Williams Realty, Encino-Sherman Oaks. Responsible broker: SET Group, Inc., CA DRE #02197031. Each office is independently owned and operated. Not an attorney; nothing on this site is legal or tax advice. If your property is currently listed for sale, this is not a solicitation of that listing. Equal Housing Opportunity.</p>
+  </div>
+</footer>
+
+</body>
+</html>
