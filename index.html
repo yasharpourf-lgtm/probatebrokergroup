@@ -137,6 +137,16 @@
   details p{color:var(--text2);margin:12px 0 0;max-width:800px}
 
   /* contact */
+  /* phone bottom bar */
+  .mbar{display:none}
+  @media (max-width:640px){
+    .mbar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:40;gap:8px;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:rgba(15,16,18,.97);border-top:2px solid var(--gold);transition:transform .25s ease}
+    .mbar.hide{transform:translateY(110%)}
+    .mbar a{flex:1;text-align:center;text-decoration:none;font-weight:600;font-size:12.5px;letter-spacing:1.1px;text-transform:uppercase;padding:13px 6px;border-radius:2px}
+    .mbar .p{background:var(--gold);color:var(--black);flex:1.6}
+    .mbar .c{border:1px solid var(--gold);color:var(--gold-l)}
+    body{padding-bottom:72px}
+  }
   /* walkthrough request form */
   .wt{background:var(--panel);padding:80px 0}
   .wt .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:start}
@@ -249,10 +259,10 @@
       <h1>Inherited a home? You don't have to <em>figure it out alone.</em></h1>
       <p class="lead">When a loved one passes, the house is often the hardest part. I help executors and families in the San Fernando Valley and the Westside decide what to do with the home, and take care of the details along the way, whether you keep it, rent it or sell it.</p>
       <div class="ctas">
-        <a class="btn" href="sms:+13102797614" data-sms="">Text me</a>
+        <a class="btn" href="#walkthrough">Request a Free Property Preview</a>
         <a class="btn ghost" href="#checklist">Free executor checklist</a>
       </div>
-      <p class="phone">Call or text <a href="tel:+13102797614">(310) 279-7614</a>. No pressure, just answers.</p>
+      <p class="phone">Prefer to talk? Call or text <a href="tel:+13102797614">(310) 279-7614</a>. No pressure, just answers.</p>
     </div>
     <div class="portrait">
       <img src="headshot.jpg" alt="Farhad Yasharpour">
@@ -345,7 +355,7 @@
     <div style="max-width:620px">
       <p class="eyebrow">What's the house worth?</p>
       <h2 style="font-size:30px">Get a quick estimate in under a minute</h2>
-      <p style="color:var(--text2);margin:12px 0 0">Enter the address for an instant online estimate. Inherited homes are often different from what the computer sees, so I'm also happy to walk through the house and give you an honest value, free.</p>
+      <p style="color:var(--text2);margin:12px 0 0">Enter the address for an instant online estimate. Inherited homes are often different from what the computer sees, so I'm also happy to give you a Free Property Preview with an honest opinion of value.</p>
     </div>
     <div class="band-ctas">
       <a class="btn dark" href="https://beverlyluxuryestates.com/home-valuation" target="_blank" rel="noopener">Get an instant estimate</a>
@@ -500,6 +510,11 @@
   </div>
 </div>
 
+<div class="mbar" id="mbar">
+  <a class="p" href="#walkthrough">Free Property Preview</a>
+  <a class="c" href="tel:+13102797614">Call me</a>
+</div>
+
 <footer>
   <div class="wrap">
     <img class="eso" src="kw-eso.png" alt="Keller Williams Encino-Sherman Oaks. Each office is independently owned and operated.">
@@ -568,6 +583,13 @@
     });
   })();
 })();
+
+  // hide phone bar while the form is on screen
+  (function(){
+    var bar=document.getElementById('mbar'), wt=document.getElementById('walkthrough');
+    if(!bar||!wt||!('IntersectionObserver' in window)) return;
+    new IntersectionObserver(function(es){es.forEach(function(e){bar.classList.toggle('hide',e.isIntersecting);});},{threshold:0.15}).observe(wt);
+  })();
 </script>
 </body>
 </html>
