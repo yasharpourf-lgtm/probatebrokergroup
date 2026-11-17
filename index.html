@@ -137,6 +137,42 @@
   details p{color:var(--text2);margin:12px 0 0;max-width:800px}
 
   /* contact */
+  /* walkthrough request form */
+  .wt{background:var(--panel);padding:80px 0}
+  .wt .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:start}
+  .wt h2{font-size:36px}
+  .wt .why{list-style:none;padding:0;margin:22px 0 0}
+  .wt .why li{padding:8px 0 8px 30px;position:relative;color:var(--text2)}
+  .wt .why li:before{content:"";position:absolute;left:4px;top:15px;width:12px;height:7px;border-left:2px solid var(--gold);border-bottom:2px solid var(--gold);transform:rotate(-45deg)}
+  .wt .alt-contact{margin-top:22px;font-size:14px;color:var(--muted)}
+  .wt .alt-contact a{color:var(--gold-m);font-weight:600;text-decoration:none}
+  .wt form{background:#fff;border:1px solid var(--hair);border-top:3px solid var(--gold);padding:30px;border-radius:3px;box-shadow:0 10px 30px rgba(0,0,0,.06)}
+  .wt .row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .wt label{display:block;font-size:12px;letter-spacing:1px;text-transform:uppercase;font-weight:600;color:var(--text2);margin:0 0 6px}
+  .wt .f{margin-bottom:16px}
+  .wt input[type=text],.wt input[type=tel],.wt input[type=email],.wt textarea{width:100%;font:inherit;font-size:16px;padding:12px 14px;border:1px solid #D6D0C4;border-radius:2px;background:#fff;color:var(--text)}
+  .wt input:focus,.wt textarea:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(184,148,90,.18)}
+  .wt textarea{min-height:84px;resize:vertical}
+  .wt .wt-opt{font-weight:400;text-transform:none;letter-spacing:0;color:var(--muted)}
+  .wt .chips{display:flex;flex-wrap:wrap;gap:8px}
+  .wt .chips label,.wt label.consent{text-transform:none;letter-spacing:0;font-weight:400;margin:0}
+  .wt .chips label{display:inline-block;position:relative}
+  .wt .chips input{position:absolute;opacity:0;pointer-events:none}
+  .wt .chips span{display:inline-block;padding:9px 14px;border:1px solid #D6D0C4;border-radius:20px;font-size:14px;cursor:pointer;color:var(--text2);background:#fff}
+  .wt .chips input:checked+span{background:var(--black);color:var(--ivory);border-color:var(--black)}
+  .wt .chips input:focus-visible+span{box-shadow:0 0 0 3px rgba(184,148,90,.35)}
+  .wt .consent{display:flex;gap:10px;align-items:flex-start;font-size:13px;color:var(--text2);margin:6px 0 20px !important;line-height:1.5}
+  .wt .consent input{margin-top:3px;width:18px;height:18px;flex:0 0 auto;accent-color:var(--gold)}
+  .wt button.btn{width:100%;font-size:14px;padding:16px;cursor:pointer;font-family:inherit}
+  .wt button.btn[disabled]{opacity:.6;cursor:wait}
+  .wt .fine{font-size:12px;color:var(--muted);margin:12px 0 0;text-align:center}
+  .wt .err{display:none;background:#FBEDEA;color:#8A2D1E;font-size:14px;padding:10px 12px;border-radius:2px;margin-bottom:14px}
+  .wt .done{display:none;text-align:center;padding:20px 6px}
+  .wt .done h3{font-size:26px;margin:0 0 10px}
+  .wt .done p{color:var(--text2);margin:0}
+  .wt .hp{position:absolute;left:-9999px}
+  @media (max-width:900px){.wt .wrap{grid-template-columns:1fr;gap:30px}.wt h2{font-size:30px}}
+  @media (max-width:560px){.wt .row{grid-template-columns:1fr;gap:0}.wt form{padding:22px}}
   .contact{background:var(--black);color:var(--ivory);text-align:center;padding:84px 0 60px}
   .contact img.hs{width:130px;height:130px;border-radius:50%;border:2px solid var(--gold);object-fit:cover}
   .contact h2{font-size:38px;color:var(--ivory);margin:20px 0 10px}
@@ -200,6 +236,7 @@
       <a href="#help">How I help</a>
       <a href="#process">The process</a>
       <a href="#faq">Questions</a>
+      <a href="#walkthrough">Free walkthrough</a>
       <a class="btn" href="tel:+13102797614">(310) 279-7614</a>
     </nav>
   </div>
@@ -312,7 +349,7 @@
     </div>
     <div class="band-ctas">
       <a class="btn dark" href="https://beverlyluxuryestates.com/home-valuation" target="_blank" rel="noopener">Get an instant estimate</a>
-      <a class="btn" href="tel:+13102797614">Ask for a free walkthrough</a>
+      <a class="btn" href="#walkthrough">Ask for a free walkthrough</a>
     </div>
   </div>
 </section>
@@ -383,6 +420,68 @@
   </div>
 </section>
 
+<section class="wt" id="walkthrough">
+  <div class="wrap">
+    <div>
+      <p class="eyebrow">Free, no obligation</p>
+      <h2>Request a free walkthrough of the home</h2>
+      <p style="color:var(--text2);margin:16px 0 0">Tell me a little about the property and I'll call you to set a time that works for you, in person or by video if you live out of the area.</p>
+      <ul class="why">
+        <li>An honest picture of the home's condition and value</li>
+        <li>Your options: keep it, rent it or sell it</li>
+        <li>No cost and no pressure, even if you're not ready yet</li>
+        <li>Your information stays private and is never shared</li>
+      </ul>
+      <p class="alt-contact">Prefer to talk now? Call or text <a href="tel:+13102797614">(310) 279-7614</a>.</p>
+    </div>
+    <form id="wtForm" novalidate>
+      <div class="wt-fields">
+        <div class="err" id="wtErr" role="alert"></div>
+        <input type="hidden" name="access_key" value="0077b69d-e33c-4a2b-9cb4-4eb87ccbe978">
+        <input type="hidden" name="subject" value="New walkthrough request from probatebrokergroup.com">
+        <input type="hidden" name="from_name" value="Probate Broker Group website">
+        <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off">
+        <div class="row">
+          <div class="f"><label for="wtName">Your name</label><input type="text" id="wtName" name="name" autocomplete="name" required></div>
+          <div class="f"><label for="wtPhone">Phone</label><input type="tel" id="wtPhone" name="phone" autocomplete="tel" inputmode="tel" required></div>
+        </div>
+        <div class="f"><label for="wtEmail">Email <span class="wt-opt">(optional)</span></label><input type="email" id="wtEmail" name="email" autocomplete="email"></div>
+        <div class="f"><label for="wtAddr">Property address</label><input type="text" id="wtAddr" name="property_address" autocomplete="street-address" placeholder="Street and city" required></div>
+        <div class="f"><label>I am the</label>
+          <div class="chips">
+            <label><input type="radio" name="role" value="Executor / administrator"><span>Executor</span></label>
+            <label><input type="radio" name="role" value="Family member / heir"><span>Family member</span></label>
+            <label><input type="radio" name="role" value="Attorney"><span>Attorney</span></label>
+            <label><input type="radio" name="role" value="Other"><span>Other</span></label>
+          </div>
+        </div>
+        <div class="f"><label>Walkthrough</label>
+          <div class="chips">
+            <label><input type="radio" name="walkthrough" value="In person"><span>In person</span></label>
+            <label><input type="radio" name="walkthrough" value="By video"><span>By video</span></label>
+            <label><input type="radio" name="walkthrough" value="Not sure yet"><span>Not sure yet</span></label>
+          </div>
+        </div>
+        <div class="f"><label>Best time to call</label>
+          <div class="chips">
+            <label><input type="radio" name="best_time" value="Morning"><span>Morning</span></label>
+            <label><input type="radio" name="best_time" value="Afternoon"><span>Afternoon</span></label>
+            <label><input type="radio" name="best_time" value="Evening"><span>Evening</span></label>
+          </div>
+        </div>
+        <div class="f"><label for="wtMsg">Anything I should know? <span class="wt-opt">(optional)</span></label><textarea id="wtMsg" name="message" placeholder="For example: the home is vacant, family lives out of state, court date coming up"></textarea></div>
+        <label class="consent"><input type="checkbox" name="ok_to_contact" value="Yes" required><span>It's OK for Farhad Yasharpour to call or text me at this number about my request.</span></label>
+        <button class="btn" type="submit" id="wtBtn">Request my free walkthrough</button>
+        <p class="fine">I'll call you within one business day. No cost, no obligation.</p>
+      </div>
+      <div class="done" id="wtDone" role="status">
+        <h3>Thank you.</h3>
+        <p>I received your request and will call you within one business day to find a time that works for you. If it's urgent, call or text me at <a href="tel:+13102797614" style="color:var(--gold-m);font-weight:600;text-decoration:none">(310) 279-7614</a>.</p>
+      </div>
+    </form>
+  </div>
+</section>
+
 <div class="contact" id="contact">
   <div class="wrap">
     <img class="hs" src="headshot.jpg" alt="Farhad Yasharpour">
@@ -441,6 +540,33 @@
   document.getElementById('smsClose').addEventListener('click',close);
   note.addEventListener('click',function(e){if(e.target===note)close();});
   document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});
+
+  // walkthrough request form
+  (function(){
+    var f=document.getElementById('wtForm'); if(!f) return;
+    var err=document.getElementById('wtErr'), btn=document.getElementById('wtBtn');
+    function showErr(m){err.textContent=m;err.style.display='block';err.scrollIntoView({block:'center',behavior:'smooth'});}
+    f.addEventListener('submit',function(e){
+      e.preventDefault(); err.style.display='none';
+      var name=f.elements['name'].value.trim(), phone=f.elements['phone'].value.replace(/\D/g,''), addr=f.elements['property_address'].value.trim();
+      if(!name){showErr('Please enter your name.');f.elements['name'].focus();return;}
+      if(phone.length<10){showErr('Please enter a phone number where I can reach you.');f.elements['phone'].focus();return;}
+      if(!addr){showErr('Please enter the property address.');f.elements['property_address'].focus();return;}
+      if(!f.elements['ok_to_contact'].checked){showErr('Please check the box so I can call or text you back.');return;}
+      if(f.elements['botcheck'].checked) return;
+      btn.disabled=true; btn.textContent='Sending…';
+      fetch('https://api.web3forms.com/submit',{method:'POST',headers:{'Accept':'application/json'},body:new FormData(f)})
+        .then(function(r){return r.json();})
+        .then(function(d){
+          if(d && d.success){f.querySelector('.wt-fields').style.display='none';document.getElementById('wtDone').style.display='block';}
+          else{throw new Error('fail');}
+        })
+        .catch(function(){
+          btn.disabled=false; btn.textContent='Request my free walkthrough';
+          showErr('Sorry, something went wrong sending your request. Please call or text me at (310) 279-7614.');
+        });
+    });
+  })();
 })();
 </script>
 </body>
