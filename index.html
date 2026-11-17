@@ -88,6 +88,8 @@
   .band .wrap{display:flex;align-items:center;justify-content:space-between;gap:36px;flex-wrap:wrap}
   .band h2{font-size:32px;color:var(--ivory)}
   .band p{color:#C7C2B8;margin:10px 0 0;max-width:600px}
+  .band-ctas{display:flex;flex-direction:column;gap:12px}
+  .band-ctas .btn{text-align:center}
   .band .big{font-size:15px;color:var(--gold-l);margin-top:14px;letter-spacing:.4px}
 
   /* basics */
@@ -128,6 +130,14 @@
   .logos img{width:150px;padding:0 14px}
   .logos .sep{width:1px;height:46px;background:#3A3529}
 
+  .sms-note{display:none;position:fixed;inset:0;background:rgba(15,16,18,.72);z-index:50;align-items:center;justify-content:center;padding:20px}
+  .sms-note.on{display:flex}
+  .sms-box{background:#fff;max-width:420px;width:100%;padding:30px 28px;border-top:3px solid var(--gold);text-align:center}
+  .sms-box h3{font-size:24px;margin-bottom:10px}
+  .sms-box p{color:var(--text2);margin:0 0 6px}
+  .sms-box .num{font-size:28px;font-family:"Playfair Display",Georgia,serif;color:var(--black);margin:4px 0 20px}
+  .sms-box .row{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+  .sms-box .x{background:none;border:0;color:var(--muted);margin-top:14px;cursor:pointer;font:inherit;font-size:13px;text-decoration:underline}
   footer{background:var(--panel);color:var(--muted);font-size:12px;line-height:1.7;text-align:center;padding:22px 0 26px}
   footer p{margin:0 auto;max-width:860px}
   footer img.eso{width:220px;display:block;margin:4px auto 14px}
@@ -182,7 +192,7 @@
       <h1>Inherited a home? You don't have to <em>figure it out alone.</em></h1>
       <p class="lead">When a loved one passes, the house is often the hardest part. I help executors and families in the San Fernando Valley and the Westside decide what to do with the home, and take care of the details along the way, whether you keep it, rent it or sell it.</p>
       <div class="ctas">
-        <a class="btn" href="sms:+13102797614">Text me</a>
+        <a class="btn" href="sms:+13102797614" data-sms="">Text me</a>
         <a class="btn ghost" href="#checklist">Free executor checklist</a>
       </div>
       <p class="phone">Call or text <a href="tel:+13102797614">(310) 279-7614</a>. No pressure, just answers.</p>
@@ -259,9 +269,12 @@
     <div>
       <h2>Free: the executor's checklist</h2>
       <p>A one-page checklist of what to do with the house in the first weeks, plus my list of trusted estate sale and clean-out companies.</p>
-      <p class="big">Text <b>CHECKLIST</b> to (310) 279-7614 and I'll send it right over.</p>
+      <p class="big">Text <b>CHECKLIST</b> to (310) 279-7614 and I'll send it right over, or download it now.</p>
     </div>
-    <a class="btn" href="sms:+13102797614?body=CHECKLIST">Text CHECKLIST</a>
+    <div class="band-ctas">
+      <a class="btn" href="executor-checklist.pdf" target="_blank" rel="noopener">Download the checklist</a>
+      <a class="btn ghost" href="sms:+13102797614?&body=CHECKLIST" data-sms="CHECKLIST">Text CHECKLIST</a>
+    </div>
   </div>
 </div>
 
@@ -324,7 +337,7 @@
     <p>Whether you're ready to decide or just need someone to answer a few questions, I'm happy to help.</p>
     <div class="ctas">
       <a class="btn" href="tel:+13102797614">Call (310) 279-7614</a>
-      <a class="btn ghost" href="sms:+13102797614">Text me</a>
+      <a class="btn ghost" href="sms:+13102797614" data-sms="">Text me</a>
     </div>
     <div class="idline">
       <span>Farhad Yasharpour, REALTOR®</span><span class="d">·</span><span>Keller Williams Realty</span><span class="d">·</span><span>CA DRE #02173521</span><span class="d">·</span><span><a href="mailto:yasharpourf@gmail.com">yasharpourf@gmail.com</a></span><span class="d">·</span><span><a href="https://beverlyluxuryestates.com">BeverlyLuxuryEstates.com</a></span>
@@ -342,5 +355,40 @@
   </div>
 </footer>
 
+<div class="sms-note" id="smsNote" role="dialog" aria-modal="true" aria-labelledby="smsTitle">
+  <div class="sms-box">
+    <h3 id="smsTitle">Text me from your phone</h3>
+    <p id="smsMsg">Send a text to:</p>
+    <div class="num">(310) 279-7614</div>
+    <div class="row">
+      <button class="btn" type="button" id="smsCopy">Copy number</button>
+      <a class="btn dark" href="tel:+13102797614">Call instead</a>
+    </div>
+    <button class="x" type="button" id="smsClose">Close</button>
+  </div>
+</div>
+<script>
+(function(){
+  var mobile=/Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent);
+  var note=document.getElementById('smsNote'),msg=document.getElementById('smsMsg'),cp=document.getElementById('smsCopy');
+  document.querySelectorAll('a[data-sms]').forEach(function(a){
+    a.addEventListener('click',function(e){
+      if(mobile) return;
+      e.preventDefault();
+      var w=a.getAttribute('data-sms');
+      msg.innerHTML=w?'Text the word <b>'+w+'</b> to:':'Send a text to:';
+      cp.textContent='Copy number';
+      note.classList.add('on');
+    });
+  });
+  cp.addEventListener('click',function(){
+    try{navigator.clipboard.writeText('3102797614').then(function(){cp.textContent='Copied';},function(){cp.textContent='(310) 279-7614';});}catch(e){cp.textContent='(310) 279-7614';}
+  });
+  function close(){note.classList.remove('on');}
+  document.getElementById('smsClose').addEventListener('click',close);
+  note.addEventListener('click',function(e){if(e.target===note)close();});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});
+})();
+</script>
 </body>
 </html>
