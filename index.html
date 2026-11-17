@@ -44,6 +44,14 @@
   .btn.dark{background:var(--black);color:var(--ivory);border-color:var(--black)}
   nav .btn{padding:10px 18px;font-size:12px;white-space:nowrap}
 
+  /* welcome video */
+  .welcome{background:var(--black);padding:0 0 72px}
+  .welcome .wrap{text-align:center}
+  .welcome h2{color:var(--ivory);font-size:30px;margin-bottom:8px}
+  .welcome p.sub{color:#C7C2B8;font-size:15px;margin:0 0 26px}
+  .welcome .vid{max-width:860px;margin:0 auto;border:1px solid rgba(184,148,90,.45);border-radius:4px;overflow:hidden;box-shadow:0 18px 50px rgba(0,0,0,.5);background:#000}
+  .welcome video{display:block;width:100%;height:auto;aspect-ratio:16/9}
+
   /* hero */
   .hero{background:radial-gradient(ellipse at 70% 0%, #2a2117 0%, var(--black) 60%);color:var(--ivory);padding:88px 0 96px}
   .hero .wrap{display:grid;grid-template-columns:1.35fr .65fr;gap:56px;align-items:center}
@@ -212,6 +220,20 @@
     </div>
   </div>
 </div>
+
+<section class="welcome" id="video">
+  <div class="wrap">
+    <p class="eyebrow">A short message from Farhad</p>
+    <h2>Before anything else, I'm sorry for your loss.</h2>
+    <p class="sub">About a minute and a half. No pressure, just a hello.</p>
+    <div class="vid">
+      <video controls playsinline preload="metadata" poster="welcome-poster.jpg">
+        <source src="welcome-video.mp4" type="video/mp4">
+        Your browser can't play this video. You can call or text me at (310) 279-7614.
+      </video>
+    </div>
+  </div>
+</section>
 
 <section>
   <div class="wrap intro">
@@ -383,7 +405,7 @@
     <div class="num">(310) 279-7614</div>
     <div class="row">
       <button class="btn" type="button" id="smsCopy">Copy number</button>
-      <a class="btn dark" id="smsCall" href="tel:+13102797614">Call instead</a>
+      <a class="btn dark" href="tel:+13102797614">Call instead</a>
     </div>
     <button class="x" type="button" id="smsClose">Close</button>
   </div>
@@ -392,22 +414,12 @@
 (function(){
   var mobile=/Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent);
   var note=document.getElementById('smsNote'),msg=document.getElementById('smsMsg'),cp=document.getElementById('smsCopy');
-  var ttl=document.getElementById('smsTitle'),callBtn=document.getElementById('smsCall');
-  document.querySelectorAll('a[data-sms], a[href^="tel:"]').forEach(function(a){
-    if(a.closest('#smsNote')) return;
+  document.querySelectorAll('a[data-sms]').forEach(function(a){
     a.addEventListener('click',function(e){
       if(mobile) return;
       e.preventDefault();
-      if(a.hasAttribute('data-sms')){
-        var w=a.getAttribute('data-sms');
-        ttl.textContent='Text me from your phone';
-        msg.innerHTML=w?'Text the word <b>'+w+'</b> to:':'Send a text to:';
-        callBtn.style.display='';
-      }else{
-        ttl.textContent='Call or text me';
-        msg.innerHTML='From your phone, call or text:';
-        callBtn.style.display='none';
-      }
+      var w=a.getAttribute('data-sms');
+      msg.innerHTML=w?'Text the word <b>'+w+'</b> to:':'Send a text to:';
       cp.textContent='Copy number';
       note.classList.add('on');
     });
