@@ -84,6 +84,17 @@
   .intro p{font-size:17px;color:var(--text2);margin:0 0 16px}
   .intro .note{border-left:3px solid var(--gold);padding:6px 0 6px 20px;font-family:"Playfair Display",Georgia,serif;font-size:21px;font-style:italic;color:var(--text);line-height:1.5}
 
+
+  /* google reviews */
+  .revs{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+  .rev{background:#fff;border:1px solid var(--hair);border-top:3px solid var(--gold);padding:26px 24px;margin:0}
+  .rev .stars{color:var(--gold);letter-spacing:3px;font-size:16px;margin-bottom:10px}
+  .rev blockquote{margin:0 0 14px;font-size:15.5px;color:var(--text2);line-height:1.65}
+  .rev figcaption{font-weight:600;font-size:14px;color:var(--text)}
+  .rev figcaption span{font-weight:400;color:var(--muted)}
+  .rev-foot{text-align:center;margin:28px 0 0;color:var(--text2);font-size:15px}
+  .rev-foot a{color:var(--gold-m);font-weight:600}
+  @media (max-width:760px){.revs{grid-template-columns:1fr}}
   /* help grid */
   .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
   .card{background:#fff;border:1px solid var(--hair);padding:26px 22px;border-top:3px solid var(--gold)}
@@ -426,7 +437,24 @@
   </div>
 </section>
 
-<section class="alt" id="faq">
+<section class="alt" id="reviews">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Client reviews</p>
+      <h2>What clients say on Google</h2>
+      <p>5.0 stars from every review on my Google Business Profile, shown here word for word.</p>
+    </div>
+    <div class="revs">
+      <figure class="rev"><div class="stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><blockquote>&ldquo;Farhad was great! After our inspection, he helped us understand the repairs needed and worked hard to negotiate credits from the seller. The negotiations weren&rsquo;t easy, but Farhad kept us informed throughout the process and always looked out for our best interests. He was honest, patient, professional, and always available to answer our questions. We highly recommend him!&rdquo;</blockquote><figcaption>Michael Martinez <span>&middot; Google review</span></figcaption></figure>
+      <figure class="rev"><div class="stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><blockquote>&ldquo;Selling our house with Farhad was a breeze. He took care of the details, scheduled professional photos, and kept everything on track. We closed faster than we expected.&rdquo;</blockquote><figcaption>Janina Fay <span>&middot; Google review</span></figcaption></figure>
+      <figure class="rev"><div class="stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><blockquote>&ldquo;Farhad handled our sale with professionalism and care. He made sure we understood every step and worked hard to get the best outcome.&rdquo;</blockquote><figcaption>Richard Posey <span>&middot; Google review</span></figcaption></figure>
+      <figure class="rev"><div class="stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><blockquote>&ldquo;Working with Farhad was a pleasure. He’s organized, skilled at marketing, and genuinely cares about his clients’ success. We highly recommend him.&rdquo;</blockquote><figcaption>James Jordan <span>&middot; Google review</span></figcaption></figure>
+    </div>
+    <p class="rev-foot"><a href="https://maps.google.com/?cid=7965963452904574740" target="_blank" rel="noopener">Read all reviews on Google</a></p>
+  </div>
+</section>
+
+<section id="faq">
   <div class="wrap">
     <div class="sec-head">
       <p class="eyebrow">Questions</p>
